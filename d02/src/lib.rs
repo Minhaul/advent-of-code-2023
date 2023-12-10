@@ -17,7 +17,9 @@ const BLUE_STR: &str = "blue";
 
 impl Game {
     pub fn from_string(s: &String) -> Game {
-        let id: u32 = s[s.find(" ").unwrap() + 1..s.find(":").unwrap()].parse::<u32>().unwrap();
+        let id: u32 = s[s.find(" ").unwrap() + 1..s.find(":").unwrap()]
+            .parse::<u32>()
+            .unwrap();
         let mut game = Game {
             id,
             pulls: Vec::new(),
@@ -38,10 +40,10 @@ impl Game {
                     BLUE_STR => blue = num,
                     _ => println!("BAD COLOR"),
                 }
-            };
+            }
 
             game.pulls.push(CubePull { red, green, blue });
-        };
+        }
 
         game
     }

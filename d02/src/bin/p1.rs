@@ -12,12 +12,14 @@ fn main() {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;
-        },
+        }
         Ok(v) => v,
     };
 
     let games = input_str.into_iter().map(|s| Game::from_string(&s));
-    let result = games.filter(|g| is_game_valid(&g)).fold(0, |acc, g| acc + g.id);
+    let result = games
+        .filter(|g| is_game_valid(&g))
+        .fold(0, |acc, g| acc + g.id);
 
     println!("{:?}", result);
 }
