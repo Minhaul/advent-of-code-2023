@@ -8,7 +8,7 @@ fn main() {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;
-        },
+        }
         Ok(v) => v,
     };
 

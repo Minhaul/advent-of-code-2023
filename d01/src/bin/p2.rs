@@ -2,8 +2,7 @@ use file_reader;
 
 const INPUT_FILENAME: &str = "input.txt";
 const RADIX: u32 = 10;
-const DIGITS: [(u32, &str); 9] =
-[
+const DIGITS: [(u32, &str); 9] = [
     (1, "one"),
     (2, "two"),
     (3, "three"),
@@ -26,7 +25,7 @@ fn main() {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;
-        },
+        }
         Ok(v) => v,
     };
 
@@ -41,10 +40,7 @@ fn get_calibration_value(s: &String) -> u32 {
         index: usize::MAX,
         value: 0,
     };
-    let mut last_num = IdxVal {
-        index: 0,
-        value: 0,
-    };
+    let mut last_num = IdxVal { index: 0, value: 0 };
 
     for digit in DIGITS {
         let digit_str: String = digit.0.to_string();
@@ -57,15 +53,15 @@ fn get_calibration_value(s: &String) -> u32 {
             (Some((m1, _)), Some((m2, _))) => {
                 first = Some(m1.min(m2));
                 last = Some(m1.max(m2));
-            },
+            }
             (Some((m1, _)), None) => {
                 first = Some(m1);
                 last = Some(m1);
-            },
+            }
             (None, Some((m2, _))) => {
                 first = Some(m2);
                 last = Some(m2);
-            },
+            }
             (None, None) => (),
         }
 
@@ -73,13 +69,13 @@ fn get_calibration_value(s: &String) -> u32 {
         match (number_matches.last(), name_matches.last()) {
             (Some((m1, _)), Some((m2, _))) => {
                 later = Some(m1.max(m2));
-            },
+            }
             (Some((m1, _)), None) => {
                 later = Some(m1);
-            },
+            }
             (None, Some((m2, _))) => {
                 later = Some(m2);
-            },
+            }
             (None, None) => (),
         }
         if last == None || (later != None && later.unwrap() > last.unwrap()) {

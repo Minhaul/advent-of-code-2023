@@ -8,12 +8,15 @@ fn main() {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;
-        },
+        }
         Ok(v) => v,
     };
 
     let games = input_str.into_iter().map(|s| Game::from_string(&s));
-    let result = games.map(|g| get_minimum_power(&g)).reduce(|acc, p| acc + p).unwrap();
+    let result = games
+        .map(|g| get_minimum_power(&g))
+        .reduce(|acc, p| acc + p)
+        .unwrap();
 
     println!("{:?}", result);
 }
