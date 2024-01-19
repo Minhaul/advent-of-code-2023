@@ -1,5 +1,6 @@
 use d03::*;
 use file_reader;
+use utils::Coord;
 
 const INPUT_FILENAME: &str = "input.txt";
 const GEAR_CHAR: char = '*';

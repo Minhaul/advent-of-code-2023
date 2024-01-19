@@ -1,3 +1,5 @@
+use utils::Coord;
+
 pub const NS: char = '|';
 pub const EW: char = '-';
 pub const NE: char = 'L';
@@ -5,12 +7,6 @@ pub const NW: char = 'J';
 pub const SW: char = '7';
 pub const SE: char = 'F';
 pub const START: char = 'S';
-
-#[derive(Debug, Clone, Copy)]
-pub struct Coord {
-    pub x: usize,
-    pub y: usize,
-}
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Direction {

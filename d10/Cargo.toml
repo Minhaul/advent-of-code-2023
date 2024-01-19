@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 file-reader = { path = "../file-reader" }
+utils = { path = "../utils" }
