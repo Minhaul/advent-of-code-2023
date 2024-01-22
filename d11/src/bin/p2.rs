@@ -1,10 +1,9 @@
 use d11::*;
-use file_reader;
 
 const INPUT_FILENAME: &str = "input.txt";
 
 fn main() {
-    let Ok(input_str) = file_reader::file_to_vec(INPUT_FILENAME) else {
+    let Ok(input_str) = utils::file_to_vec(INPUT_FILENAME) else {
         panic!("Couldn't turn file into vec!");
     };
 

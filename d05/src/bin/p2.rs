@@ -1,5 +1,3 @@
-use file_reader;
-
 const INPUT_FILENAME: &str = "input.txt";
 
 #[derive(Debug)]
@@ -16,7 +14,7 @@ struct MapEntry {
 }
 
 fn main() {
-    let input_str = match file_reader::file_to_vec(INPUT_FILENAME) {
+    let input_str = match utils::file_to_vec(INPUT_FILENAME) {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;

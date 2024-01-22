@@ -1,5 +1,4 @@
 use d02::*;
-use file_reader;
 
 const INPUT_FILENAME: &str = "input.txt";
 
@@ -8,7 +7,7 @@ const GREEN_MAX: u32 = 13;
 const BLUE_MAX: u32 = 14;
 
 fn main() {
-    let input_str = match file_reader::file_to_vec(INPUT_FILENAME) {
+    let input_str = match utils::file_to_vec(INPUT_FILENAME) {
         Err(_) => {
             println!("Couldn't turn file into vec!");
             return;

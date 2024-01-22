@@ -3,6 +3,5 @@ resolver = "2"
 
 members = [
   "d*",
-  "file-reader",
   "utils",
 ]
